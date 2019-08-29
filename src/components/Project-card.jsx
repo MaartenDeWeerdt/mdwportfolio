@@ -3,6 +3,10 @@ import Img from "gatsby-image"
 import { withTheme } from "emotion-theming"
 import css from "@emotion/css"
 
+const breakpoints = [400]
+
+const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
+
 const ProjectCard = ({ project, bg, theme }) => (
   <div
     href={project.data.uid}
@@ -21,7 +25,9 @@ const ProjectCard = ({ project, bg, theme }) => (
         display: "inline-block",
         verticalAlign: "top",
         width: "100%",
-        maxWidth: project.data.thumbnail.localFile ? "60%" : "100%",
+        [mq[0]]: {
+          maxWidth: project.data.thumbnail.localFile ? "60%" : "100%",
+        },
       })}
     >
       <h2 css={css({ color: theme.colors.greyDarker })}>
@@ -31,10 +37,13 @@ const ProjectCard = ({ project, bg, theme }) => (
     </div>
     {project.data.thumbnail.localFile && (
       <Img
-        style={{
-          width: "40%",
+        css={css({
           display: "inline-block",
-        }}
+          width: "100%",
+          [mq[0]]: {
+            width: "40%",
+          },
+        })}
         fluid={project.data.thumbnail.localFile.childImageSharp.fluid}
         alt="Gatsby Docs are awesome"
       />
