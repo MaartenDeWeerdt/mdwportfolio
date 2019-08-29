@@ -17,8 +17,30 @@ const globalStyle = css`
   body {
     color: ${theme.colors.greyDarker};
     background-color: ${theme.colors.bg};
+    background: repeating-linear-gradient(
+      40deg,
+      transparent,
+      transparent 200px,
+      rgba(32, 28, 61, 0.1) 0,
+      rgba(32, 28, 61, 0.1) 300px,
+      transparent 0,
+      transparent 550px,
+      rgba(184, 79, 200, 0.05) 0,
+      rgba(184, 79, 200, 0.05) 725px,
+      transparent 0,
+      transparent 1000px,
+      rgba(52, 18, 57, 0.05) 0,
+      rgba(52, 18, 57, 0.05) 1100px,
+      transparent 0,
+      transparent 1200px,
+      rgba(157, 54, 174, 0.1) 0,
+      rgba(157, 54, 174, 0.1) 1400px,
+      transparent 0,
+      transparent 1500px
+    );
   }
-  ::selection {
+  ::selection,
+  mark {
     color: ${theme.colors.bg};
     background-color: ${theme.colors.primary};
   }
@@ -27,7 +49,6 @@ const globalStyle = css`
     transition: all 0.4s ease-in-out;
     text-decoration: none;
     font-weight: 700;
-    font-style: italic;
   }
   @media (max-width: ${theme.breakpoints.m}) {
     html {

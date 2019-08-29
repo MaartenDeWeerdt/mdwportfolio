@@ -1,31 +1,45 @@
 import React from "react"
+import Img from "gatsby-image"
 import { withTheme } from "emotion-theming"
+import css from "@emotion/css"
 
 const ProjectCard = ({ project, bg, theme }) => (
-  <a
+  <div
     href={project.data.uid}
     target="_blank"
     rel="noreferrer noopener"
-    css={{
-      borderRadius: "0.5rem",
+    css={css({
       width: "100%",
-      boxShadow: theme.boxShadow.m,
-      position: "relative",
+      paddingTop: "4rem",
       textDecoration: "none",
-      padding: "2rem",
-      color: "white",
+      color: theme.colors.greyDarker,
       background: bg || "none",
-      transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important",
-      "&:hover": {
-        color: "white !important",
-        transform: "translateY(-5px)",
-        boxShadow: theme.boxShadow.l,
-      },
-    }}
+    })}
   >
-    <h2>{project.data.title.text.toUpperCase()}</h2>
-    <div dangerouslySetInnerHTML={{ __html: project.data.content.html }} />
-  </a>
+    <div
+      css={css({
+        display: "inline-block",
+        verticalAlign: "top",
+        width: "100%",
+        maxWidth: project.data.thumbnail.localFile ? "60%" : "100%",
+      })}
+    >
+      <h2 css={css({ color: theme.colors.greyDarker })}>
+        {project.data.title.text.toUpperCase()}
+      </h2>
+      <div dangerouslySetInnerHTML={{ __html: project.data.content.html }} />
+    </div>
+    {project.data.thumbnail.localFile && (
+      <Img
+        style={{
+          width: "40%",
+          display: "inline-block",
+        }}
+        fluid={project.data.thumbnail.localFile.childImageSharp.fluid}
+        alt="Gatsby Docs are awesome"
+      />
+    )}
+  </div>
 )
 
 export default withTheme(ProjectCard)

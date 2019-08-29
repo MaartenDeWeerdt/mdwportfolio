@@ -6,15 +6,18 @@ import { Layout, Header, Projects, About, Contact } from "../components"
 class Index extends Component {
   render() {
     const {
-      data: { header, projects, about },
+      data: { header, about, highlightedProjects },
     } = this.props
 
     return (
       <Layout>
         <Parallax pages={5}>
           <Header offset={0} header={header} />
-          <Projects offset={1} projects={projects} />
-          <About offset={3} about={about} />
+          <About offset={1} about={about} />
+          <Projects
+            offset={2}
+            highlightedProjects={highlightedProjects.data.projects}
+          />
           <Contact offset={4} />
         </Parallax>
       </Layout>
@@ -36,18 +39,33 @@ export const pageQuery = graphql`
         }
       }
     }
-    projects: allPrismicProject {
-      nodes {
-        data {
-          title {
-            text
-          }
-          content {
-            html
+    highlightedProjects: prismicHighlightedProjects {
+      data {
+        projects {
+          project {
+            document {
+              data {
+                title {
+                  text
+                }
+                content {
+                  html
+                }
+                thumbnail {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                }
+              }
+              id
+              uid
+            }
           }
         }
-        id
-        uid
       }
     }
     about: prismicAbout {

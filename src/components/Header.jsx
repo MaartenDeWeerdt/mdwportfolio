@@ -1,13 +1,25 @@
 import React from "react"
-import { Content } from "../elements"
+import { Content, Inner } from "../elements"
+import css from "@emotion/css"
+import { withTheme } from "emotion-theming"
 
-const Header = ({ header, offset }) => (
+const Header = ({ header, offset, theme }) => (
   <div>
     <Content speed={0.4} offset={offset}>
-      <h1>{header.data.title.text}</h1>
-      <h3>{header.data.subtitle.text}</h3>
+      <Inner>
+        <h1 css={css({ color: theme.colors.greyDarker })}>
+          {header.data.title.text}
+        </h1>
+        <h3
+          css={css({
+            color: theme.colors.greyDarker,
+          })}
+        >
+          <mark>{header.data.subtitle.text}</mark>
+        </h3>
+      </Inner>
     </Content>
   </div>
 )
 
-export default Header
+export default withTheme(Header)

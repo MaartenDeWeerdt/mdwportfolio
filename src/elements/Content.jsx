@@ -1,16 +1,11 @@
 import React from "react"
 import { css } from "@emotion/core"
-import styled from "@emotion/styled"
 import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
 
 const breakpoints = [400, 900, 1200]
 
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 
-const StyledDiv = styled.div`
-  width: 100%;
-  text-align: left;
-`
 const Content = ({ speed, offset, children, className, factor }) => (
   <ParallaxLayer
     css={css({
@@ -34,7 +29,7 @@ const Content = ({ speed, offset, children, className, factor }) => (
     offset={offset}
     factor={factor || 1}
   >
-    <StyledDiv>{children}</StyledDiv>
+    {children}
   </ParallaxLayer>
 )
 

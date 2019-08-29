@@ -31,9 +31,6 @@ const reset = css`
   figure {
     margin: 0 0 1rem 0;
   }
-  img {
-    vertical-align: middle;
-  }
   [role="button"] {
     cursor: pointer;
   }
