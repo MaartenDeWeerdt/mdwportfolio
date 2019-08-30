@@ -2,6 +2,10 @@ import React from "react"
 import { css } from "@emotion/core"
 import { ParallaxLayer } from "react-spring/renderprops-addons.cjs"
 
+const breakpoints = [900]
+
+const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
+
 const Divider = ({
   speed,
   offset,
@@ -23,7 +27,9 @@ const Divider = ({
         color: fill,
         fill: "currentColor",
       },
-      clipPath,
+      [mq[0]]: {
+        clipPath,
+      },
     })}
     speed={speed}
     offset={offset}

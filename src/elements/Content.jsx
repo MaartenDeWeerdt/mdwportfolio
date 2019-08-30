@@ -14,16 +14,6 @@ const Content = ({ speed, offset, children, className, factor }) => (
       alignItems: "center",
       justifyContent: "center",
       zIndex: 50,
-      padding: "1rem",
-      [mq[0]]: {
-        padding: "3rem",
-      },
-      [mq[1]]: {
-        padding: "4rem",
-      },
-      [mq[2]]: {
-        padding: "5rem",
-      },
     })}
     speed={speed}
     offset={offset}

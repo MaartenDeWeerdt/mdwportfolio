@@ -10,13 +10,13 @@ const Header = ({ header, offset, theme }) => (
         <h1 css={css({ color: theme.colors.greyDarker })}>
           {header.data.title.text}
         </h1>
-        <h3
+        <h2
           css={css({
             color: theme.colors.greyDarker,
           })}
         >
           <mark>{header.data.subtitle.text}</mark>
-        </h3>
+        </h2>
       </Inner>
     </Content>
   </div>

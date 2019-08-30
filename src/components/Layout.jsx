@@ -75,6 +75,26 @@ const globalStyle = css`
       font-size: 0.563rem !important;
     }
   }
+  @media (min-width: ${theme.breakpoints.m}) {
+    h1 {
+      font-size: 3rem !important;
+    }
+    h2 {
+      font-size: 2.25rem !important;
+    }
+    h3 {
+      font-size: 1.875rem !important;
+    }
+    h4 {
+      font-size: 1.5rem !important;
+    }
+    h5 {
+      font-size: 1.25rem !important;
+    }
+    h6 {
+      font-size: 1rem !important;
+    }
+  }
 `
 
 const PureLayout = ({ children }) => (
