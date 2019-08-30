@@ -4,6 +4,7 @@ import { Global, css } from "@emotion/core"
 import { ThemeProvider } from "emotion-theming"
 
 import { theme, reset } from "../styles"
+import SEO from "./SEO"
 
 const globalStyle = css`
   ${reset}
@@ -100,7 +101,8 @@ const globalStyle = css`
 const PureLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global styles={globalStyle} />
-    {children}
+    <SEO />
+    <main>{children}</main>
   </ThemeProvider>
 )
 

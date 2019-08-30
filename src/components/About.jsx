@@ -7,7 +7,7 @@ const About = ({ offset, about, theme }) => (
   <div>
     <Divider
       bg={theme.colors.blueLight}
-      clipPath="polygon(0 15%, 100% 25%, 100% 85%, 0 75%)"
+      clipPath="polygon(0 5%, 100% 15%, 100% 100%, 0 90%)"
       speed={0.2}
       offset={offset}
     />

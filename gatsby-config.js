@@ -8,8 +8,20 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
+  siteMetadata: {
+    siteTitle: "MDW Portfolio",
+    siteTitleAlt: "Portfolio Maarten De Weerdt",
+    siteHeadline: "Hi, My name is Maarten",
+    siteUrl: "https://mdwportfolio.netlify.com",
+    siteDescription: "This website showcases my passion for Javascript",
+    siteLanguage: "en",
+    siteImage: "/banner.jpg",
+    author: "@MaartenDeWe",
+    basePath: "/",
+  },
   plugins: [
     "gatsby-plugin-netlify",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -20,9 +32,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-prismic`,
+      resolve: "gatsby-source-prismic",
       options: {
-        repositoryName: `mdwportfolio`,
+        repositoryName: "mdwportfolio",
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => project => `/${project.uid}`,
       },

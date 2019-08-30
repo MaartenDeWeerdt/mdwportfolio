@@ -8,12 +8,12 @@ const Projects = ({ offset, theme, highlightedProjects }) => (
   <div>
     <Divider
       bg="#edf2f7"
-      clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
+      clipPath="polygon(0 12%, 100% 0%, 100% 82%, 0 94%)"
       speed={-0.2}
       offset={offset}
       factor={1.5}
     />
-    <Content speed={0.4} offset={offset + 0.3} factor={1.5}>
+    <Content speed={0.4} offset={offset} factor={1.5}>
       <Inner>
         <div>
           <h1 css={css({ color: theme.colors.greyDarker })}>

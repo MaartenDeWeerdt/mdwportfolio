@@ -20,7 +20,7 @@ const Divider = ({
     css={css({
       position: "absolute",
       width: "100%",
-      height: "100%",
+      height: "100vh",
       background: bg,
       backgroundColor: bg,
       "#contact-wave": {
