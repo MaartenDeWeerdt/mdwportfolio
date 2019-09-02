@@ -15,6 +15,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/images`,
+      },
+    },
     "gatsby-plugin-emotion",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -30,6 +37,15 @@ module.exports = {
         repositoryName: "mdwportfolio",
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => project => `/${project.uid}`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "MDW Portfolio",
+        short_name: "mdw_portfolio",
+        start_url: "/",
+        icon: "src/images/icon.png",
       },
     },
   ],
