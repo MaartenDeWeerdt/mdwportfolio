@@ -29,6 +29,8 @@ const Divider = ({
       },
       [mq[0]]: {
         clipPath,
+        background: bg,
+        backgroundColor: bg,
       },
     })}
     speed={speed}

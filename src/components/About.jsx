@@ -12,7 +12,7 @@ const About = ({ offset, about, theme }) => (
       offset={offset}
     />
     <Content speed={0.4} offset={offset}>
-      <Inner bg={theme.colors.blueLight}>
+      <Inner bg={theme.colors.greyLight}>
         <div css={css({ color: theme.colors.greyDarker })}>
           <h1 css={css({ color: theme.colors.greyDarker })}>About Me</h1>
           <div

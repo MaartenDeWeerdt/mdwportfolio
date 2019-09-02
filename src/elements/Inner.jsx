@@ -23,7 +23,6 @@ const Inner = ({ children, className, bg }) => (
       [mq[2]]: {
         width: "65%",
         padding: "5rem",
-        backgroundColor: "unset",
       },
     })}
   >

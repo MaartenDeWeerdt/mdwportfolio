@@ -18,14 +18,18 @@ const ProjectCard = ({ project, index, bg, theme }) => (
     rel="noreferrer noopener"
     css={css({
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "column",
       width: "100%",
       paddingTop: "4rem",
       textDecoration: "none",
       color: theme.colors.white,
       background: bg || "none",
-      [isEven(index)]: {
-        flexDirection: "row-reverse",
+
+      [mq[0]]: {
+        flexDirection: "row",
+        [isEven(index)]: {
+          flexDirection: "row-reverse",
+        },
       },
     })}
   >
