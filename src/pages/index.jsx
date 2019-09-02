@@ -16,8 +16,6 @@ class Index extends Component {
       data: { header, about, highlightedProjects, technologies },
     } = this.props
 
-    console.log(technologies)
-
     return (
       <Layout>
         <Parallax pages={7}>
