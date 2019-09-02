@@ -51,5 +51,6 @@ module.exports = {
         theme_color: "#2d3748",
       },
     },
+    "gatsby-plugin-offline",
   ],
 }
