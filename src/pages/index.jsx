@@ -99,6 +99,15 @@ export const pageQuery = graphql`
         content {
           html
         }
+        image {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }

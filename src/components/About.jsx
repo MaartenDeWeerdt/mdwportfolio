@@ -1,7 +1,12 @@
 import React from "react"
-import { Content, Inner, Divider } from "../elements"
 import { withTheme } from "emotion-theming"
 import css from "@emotion/css"
+import Img from "gatsby-image"
+import { Content, Inner, Divider } from "../elements"
+
+const breakpoints = [600]
+
+const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`)
 
 const About = ({ offset, about, theme }) => (
   <div>
@@ -13,12 +18,58 @@ const About = ({ offset, about, theme }) => (
     />
     <Content speed={0.4} offset={offset}>
       <Inner bg={theme.colors.greyLight}>
-        <div css={css({ color: theme.colors.greyDarker })}>
-          <h1 css={css({ color: theme.colors.greyDarker })}>About Me</h1>
-          <div
-            css={css({ color: theme.colors.greyDarker })}
-            dangerouslySetInnerHTML={{ __html: about.data.content.html }}
+        <div
+          css={css({
+            display: "flex",
+            flexDirection: "column-reverse",
+            width: "100%",
+            paddingTop: "4rem",
+            textDecoration: "none",
+            color: theme.colors.greyDarker,
+
+            [mq[0]]: {
+              flexDirection: "row",
+            },
+          })}
+        >
+          <Img
+            css={css({
+              display: "block",
+              border: "10px solid white",
+              borderRadius: "5px",
+              width: "100%",
+              maxHeight: "100%",
+              [mq[0]]: {
+                marginRight: "5%",
+                width: "30%",
+                maxHeight: "300px",
+              },
+            })}
+            fluid={about.data.image.localFile.childImageSharp.fluid}
+            alt="Gatsby Docs are awesome"
           />
+          <div
+            css={css({
+              width: "100%",
+              [mq[0]]: {
+                width: "65%",
+              },
+            })}
+          >
+            <h1
+              css={css({
+                color: theme.colors.greyDarker,
+              })}
+            >
+              About Me
+            </h1>
+            <div
+              css={css({
+                color: theme.colors.greyDarker,
+              })}
+              dangerouslySetInnerHTML={{ __html: about.data.content.html }}
+            />
+          </div>
         </div>
       </Inner>
     </Content>
