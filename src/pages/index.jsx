@@ -20,15 +20,15 @@ class Index extends Component {
 
     return (
       <Layout>
-        <Parallax pages={6}>
+        <Parallax pages={7}>
           <Header offset={0} header={header} />
           <About offset={1} about={about} />
           <Projects
             offset={2}
             highlightedProjects={highlightedProjects.data.projects}
           />
-          <Technologies offset={4} technologies={technologies} />
-          <Contact offset={5} />
+          <Technologies offset={5} technologies={technologies} />
+          <Contact offset={6} />
         </Parallax>
       </Layout>
     )

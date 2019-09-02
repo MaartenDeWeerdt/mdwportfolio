@@ -26,10 +26,7 @@ const ProjectCard = ({ project, index, bg, theme }) => (
       background: bg || "none",
 
       [mq[0]]: {
-        flexDirection: "row",
-        [isEven(index)]: {
-          flexDirection: "row-reverse",
-        },
+        flexDirection: isEven(index) ? "row" : "row-reverse",
       },
     })}
   >
@@ -50,17 +47,13 @@ const ProjectCard = ({ project, index, bg, theme }) => (
       <Img
         css={css({
           display: "inline-block",
-          border: "20px solid white",
-          borderRadius: "10px",
+          border: "10px solid white",
+          borderRadius: "5px",
           width: "100%",
           [mq[0]]: {
             width: "40%",
-            marginRight: 0,
-            marginLeft: "5%",
-            [isEven(index)]: {
-              marginRight: 0,
-              marginLeft: "5%",
-            },
+            marginRight: isEven(index) ? 0 : "5%",
+            marginLeft: isEven(index) ? "5%" : 0,
           },
         })}
         fluid={project.data.thumbnail.localFile.childImageSharp.fluid}
