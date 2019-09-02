@@ -1,9 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -15,7 +9,6 @@ module.exports = {
     siteUrl: "https://mdwportfolio.netlify.com",
     siteDescription: "This website showcases my passion for Javascript",
     siteLanguage: "en",
-    siteImage: "/banner.jpg",
     author: "@MaartenDeWe",
     basePath: "/",
   },

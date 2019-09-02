@@ -1,7 +1,9 @@
 import React from "react"
 import { withTheme } from "emotion-theming"
+import css from "@emotion/css"
 import Wave from "react-wavify"
 import { Content, Inner, Divider } from "../elements"
+import Footer from "./Footer"
 
 const Contact = ({ offset, contact, theme }) => (
   <div>
@@ -15,7 +17,11 @@ const Contact = ({ offset, contact, theme }) => (
         }}
       >
         <Wave
-          css={{ height: "100%", position: "fixed", transform: "skewY(5deg)" }}
+          css={{
+            height: "100%",
+            position: "fixed",
+            transform: "skewY(5deg)",
+          }}
           fill={theme.colors.greyLight}
           paused={false}
           options={{
@@ -30,6 +36,7 @@ const Contact = ({ offset, contact, theme }) => (
             height: "100%",
             position: "fixed",
             transform: "skewY(-10deg)",
+            opacity: 0.8,
           }}
           fill={theme.colors.blueLight}
           paused={false}
@@ -40,6 +47,7 @@ const Contact = ({ offset, contact, theme }) => (
             points: 3,
           }}
         />
+
         <Wave
           css={{ height: "100%", position: "fixed" }}
           fill={theme.colors.blueDarker}
@@ -54,8 +62,9 @@ const Contact = ({ offset, contact, theme }) => (
       </div>
     </Divider>
     <Content speed={0.4} offset={offset}>
-      <Inner>
-        <h1 css={{ color: theme.colors.white }}>Get in touch</h1>
+      <Inner css={css({ color: theme.colors.white })}>
+        <h1 css={css({ color: theme.colors.white })}>Get in touch</h1>
+        <Footer />
       </Inner>
     </Content>
   </div>

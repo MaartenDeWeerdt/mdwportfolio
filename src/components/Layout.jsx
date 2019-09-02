@@ -8,9 +8,6 @@ import SEO from "./SEO"
 
 const globalStyle = css`
   ${reset}
-  h1, h2, h3, h4, h5, h6 {
-    color: ${theme.colors.white};
-  }
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -43,7 +40,7 @@ const globalStyle = css`
   ::selection,
   mark {
     color: ${theme.colors.bg};
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.blueDark};
   }
   a {
     color: ${theme.colors.primary};

@@ -1,7 +1,8 @@
 {
   "name": "mdwportfolio",
   "private": true,
-  "description": "Maarten De Weerdt's personal portfolio",
+  "author": "Maarten De Weerdt <maarten.dw@hotmail.be>",
+  "description": "This website showcases my passion for Javascript",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -43,6 +44,14 @@
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
+  "keywords": [
+    "javascript",
+    "gatsby",
+    "prismic",
+    "react",
+    "portfolio",
+    "maarten de weerdt"
+  ],
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   }

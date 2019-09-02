@@ -25,8 +25,6 @@ const Inner = ({ children, className, bg }) => (
         padding: "5rem",
         backgroundColor: "unset",
       },
-      background: bg,
-      backgroundColor: bg,
     })}
   >
     {children}

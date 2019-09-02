@@ -1,24 +1,34 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import { Parallax } from "react-spring/renderprops-addons.cjs"
-import { Layout, Header, Projects, About, Contact } from "../components"
+import {
+  Layout,
+  Header,
+  Projects,
+  Technologies,
+  About,
+  Contact,
+} from "../components"
 
 class Index extends Component {
   render() {
     const {
-      data: { header, about, highlightedProjects },
+      data: { header, about, highlightedProjects, technologies },
     } = this.props
+
+    console.log(technologies)
 
     return (
       <Layout>
-        <Parallax pages={5}>
+        <Parallax pages={6}>
           <Header offset={0} header={header} />
           <About offset={1} about={about} />
           <Projects
             offset={2}
             highlightedProjects={highlightedProjects.data.projects}
           />
-          <Contact offset={4} />
+          <Technologies offset={4} technologies={technologies} />
+          <Contact offset={5} />
         </Parallax>
       </Layout>
     )
@@ -64,6 +74,24 @@ export const pageQuery = graphql`
               id
               uid
             }
+          }
+        }
+      }
+    }
+    technologies: allPrismicTechnology {
+      nodes {
+        data {
+          icon {
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          title {
+            text
           }
         }
       }
