@@ -55,8 +55,8 @@ const ProjectCard = ({ project, index, bg, theme }) => (
           width: "100%",
           [mq[0]]: {
             width: "40%",
-            marginRight: "5%",
-            marginLeft: 0,
+            marginRight: 0,
+            marginLeft: "5%",
             [isEven(index)]: {
               marginRight: 0,
               marginLeft: "5%",
