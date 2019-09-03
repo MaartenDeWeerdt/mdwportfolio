@@ -15,9 +15,9 @@ const Projects = ({ offset, theme, highlightedProjects }) => (
       clipPath="polygon(0 12%, 100% 0%, 100% 82%, 0 94%)"
       speed={-0.2}
       offset={offset}
-      factor={2}
+      factor={2.5}
     />
-    <Content speed={0.4} offset={offset} factor={2.5}>
+    <Content speed={0.4} offset={offset} factor={3.5}>
       <Inner css={css({ [mq[0]]: { padding: "0 !important" } })}>
         <div>
           <h1 css={css({ color: theme.colors.white })}>
