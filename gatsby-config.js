@@ -6,7 +6,7 @@ module.exports = {
     siteTitle: "MDW Portfolio",
     siteTitleAlt: "Portfolio Maarten De Weerdt",
     siteHeadline: "Hi, My name is Maarten",
-    siteUrl: "https://mdwportfolio.netlify.com",
+    siteUrl: "https://maartendeweerdt.be",
     siteDescription: "This website showcases my passion for Javascript",
     siteLanguage: "en",
     author: "@MaartenDeWe",
@@ -51,5 +51,6 @@ module.exports = {
         theme_color: "#2d3748",
       },
     },
+    "gatsby-plugin-offline",
   ],
 }
